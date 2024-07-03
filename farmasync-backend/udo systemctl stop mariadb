@@ -1,0 +1,149 @@
+Jul 03 05:56:38 ip-172-31-6-15.ec2.internal systemd[1]: Starting mariadb.service - MariaDB 10.5 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 34541.
+Jul 03 05:56:38 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42730]: Initializing MariaDB database
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: Two all-privilege accounts were created.
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: One is root@localhost, it has no password, but you need to
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: be system 'root' user to connect. Use, for example, sudo mysql
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: The second is mysql@localhost, it has no password either, but
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: you need to be the system 'mysql' user to connect.
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: After connecting you can set the password, if you would need to be
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: able to connect as any of these users with a password and without sudo
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: Please report any problems at https://mariadb.org/jira
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: The latest information about MariaDB is available at https://mariadb.org/.
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: Consider joining MariaDB's strong and vibrant community:
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[42773]: https://mariadb.org/get-involved/
+Jul 03 05:56:40 ip-172-31-6-15.ec2.internal systemd[1]: Started mariadb.service - MariaDB 10.5 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 34541.
+Jul 03 06:15:21 ip-172-31-6-15.ec2.internal systemd[1]: Stopping mariadb.service - MariaDB 10.5 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 35819.
+Jul 03 06:15:21 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+Jul 03 06:15:21 ip-172-31-6-15.ec2.internal systemd[1]: Stopped mariadb.service - MariaDB 10.5 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 35819 and the job result is done.
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal systemd[1]: Starting mariadb.service - MariaDB 10.5 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 35896.
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal mariadb-check-socket[44657]: Socket file /var/lib/mysql/mysql.sock exists.
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal mariadb-check-socket[44657]: Is another MariaDB daemon already running with the same unix socket?
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal mariadb-check-socket[44657]: Please, stop the process using the socket /var/lib/mysql/mysql.sock or remove the file manually to start the service.
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Control process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPre= process belonging to unit mariadb.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has entered the 'failed' state with result 'exit-code'.
+Jul 03 06:17:02 ip-172-31-6-15.ec2.internal systemd[1]: Failed to start mariadb.service - MariaDB 10.5 database server.
+░░ Subject: A start job for unit mariadb.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished with a failure.
+░░ 
+░░ The job identifier is 35896 and the job result is failed.
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal systemd[1]: Starting mariadb.service - MariaDB 10.5 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 35972.
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal mariadb-check-socket[44723]: Socket file /var/lib/mysql/mysql.sock exists.
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal mariadb-check-socket[44723]: Is another MariaDB daemon already running with the same unix socket?
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal mariadb-check-socket[44723]: Please, stop the process using the socket /var/lib/mysql/mysql.sock or remove the file manually to start the service.
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Control process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPre= process belonging to unit mariadb.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has entered the 'failed' state with result 'exit-code'.
+Jul 03 06:17:16 ip-172-31-6-15.ec2.internal systemd[1]: Failed to start mariadb.service - MariaDB 10.5 database server.
+░░ Subject: A start job for unit mariadb.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished with a failure.
+░░ 
+░░ The job identifier is 35972 and the job result is failed.
+Jul 03 06:18:47 ip-172-31-6-15.ec2.internal systemd[1]: Starting mariadb.service - MariaDB 10.5 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 36199.
+Jul 03 06:18:47 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[44944]: Database MariaDB is probably initialized in /var/lib/mysql already, nothing is done.
+Jul 03 06:18:47 ip-172-31-6-15.ec2.internal mariadb-prepare-db-dir[44944]: If this is not the case, make sure the /var/lib/mysql is empty before running mariadb-prepare-db-dir.
+Jul 03 06:19:18 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit mariadb.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jul 03 06:19:18 ip-172-31-6-15.ec2.internal systemd[1]: mariadb.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has entered the 'failed' state with result 'exit-code'.
+Jul 03 06:19:18 ip-172-31-6-15.ec2.internal systemd[1]: Failed to start mariadb.service - MariaDB 10.5 database server.
+░░ Subject: A start job for unit mariadb.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished with a failure.
+░░ 
+░░ The job identifier is 36199 and the job result is failed.
