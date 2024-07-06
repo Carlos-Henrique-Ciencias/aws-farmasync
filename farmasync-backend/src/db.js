@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('farmasync', 'root', 'yourpassword', {
-  host: 'localhost',
+const sequelize = new Sequelize('farmasync', 'admin', 'ninfa2590', {
+  host: 'farmasync-db.cd2cayuu2t39.us-east-1.rds.amazonaws.com',
   dialect: 'mysql',
 });
 

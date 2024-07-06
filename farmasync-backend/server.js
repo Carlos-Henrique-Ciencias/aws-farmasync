@@ -6,6 +6,7 @@ const authRoutes = require('./src/routes/authRoutes');
 const appointmentRoutes = require('./src/routes/appointmentRoutes');
 const patientRoutes = require('./src/routes/patientRoutes');
 const pharmacistRoutes = require('./src/routes/pharmacistRoutes');
+const sequelize = require('./db');
 const { WebSocketServer } = require('ws');
 
 const app = express();

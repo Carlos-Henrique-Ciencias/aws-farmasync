@@ -1,25 +1,68 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '../components/HomePage.vue';
+import SobreNos from '../components/SobreNos.vue';
+import UserLogin from '../components/UserLogin.vue';
+import UserRegister from '../components/UserRegister.vue';
+import UserAgenda from '../components/UserAgenda.vue';
+import MedicalRecord from '../components/MedicalRecord.vue';
+import UserDashboard from '../components/UserDashboard.vue';
+import ClientList from '../components/ClientList.vue';
+import AddPatient from '../components/AddPatient.vue';
+import PatientList from '../components/PatientList.vue';
+
+// Função para verificar autenticação
+const isAuthenticated = () => {
+  return localStorage.getItem('authenticated') === 'true';
+};
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
+  { path: '/', component: HomePage },
+  { path: '/sobre-nos', component: SobreNos },
+  { path: '/login', component: UserLogin },
+  { path: '/register', component: UserRegister },
+  { 
+    path: '/agenda', 
+    component: UserAgenda,
+    meta: { requiresAuth: true }
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  { 
+    path: '/prontuario', 
+    component: MedicalRecord,
+    meta: { requiresAuth: true }
+  },
+  { 
+    path: '/dashboard', 
+    component: UserDashboard,
+    meta: { requiresAuth: true }
+  },
+  { 
+    path: '/clientes', 
+    component: ClientList,
+    meta: { requiresAuth: true }
+  },
+  { 
+    path: '/pharmacists/:pharmacistId/add-patient', 
+    component: AddPatient,
+    meta: { requiresAuth: true }
+  },
+  { 
+    path: '/pharmacists/:pharmacistId/patients', 
+    component: PatientList,
+    meta: { requiresAuth: true }
   }
-]
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
-})
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !isAuthenticated()) {
+    next('/login');
+  } else {
+    next();
+  }
+});
+
+export default router;
