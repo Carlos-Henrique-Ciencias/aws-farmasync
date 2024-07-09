@@ -7,11 +7,23 @@
 
 <script>
 import Header from './components/Header.vue';
+import axios from 'axios';
+import { API_URL } from './config.js';
 
 export default {
   name: 'App',
   components: {
     Header
+  },
+  created() {
+    // Exemplo de chamada à API ao criar o componente
+    axios.get(`${API_URL}/auth/test`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
   }
 };
 </script>

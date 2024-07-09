@@ -1,52 +1,72 @@
 <template>
-    <div class="login">
-      <h2>Login</h2>
-      <form @submit.prevent="login">
-        <input type="email" v-model="email" placeholder="Email" required>
-        <input type="password" v-model="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-      </form>
+  <div class="bg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Meu Site</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Home</router-link>
+          </li>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/login">Login</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/register">Register</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="card p-4">
+        <h2 class="text-center">Login</h2>
+        <form>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+          <p class="text-center mt-3">Don't have an account? <router-link to="/register">Register</router-link></p>
+        </form>
+      </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        email: '',
-        password: ''
-      };
-    },
-    methods: {
-      async login() {
-        try {
-          const response = await fetch('/api/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: this.email, password: this.password })
-          });
-          const data = await response.json();
-          if (response.ok) {
-            this.$store.dispatch('login', data.user);
-            this.$router.push('/dashboard');
-          } else {
-            alert(data.error);
-          }
-        } catch (err) {
-          console.error(err);
-        }
-      }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .login {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  </style>
-  
+
+    <footer class="footer bg-dark text-white text-center py-3">
+      <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Login',
+};
+</script>
+
+<style scoped>
+.bg {
+  background-image: url('..\assets\home.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  height: 100vh;
+}
+</style>

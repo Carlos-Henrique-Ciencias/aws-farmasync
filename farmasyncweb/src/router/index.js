@@ -10,46 +10,17 @@ import ClientList from '../components/ClientList.vue';
 import AddPatient from '../components/AddPatient.vue';
 import PatientList from '../components/PatientList.vue';
 
-// Função para verificar autenticação
-const isAuthenticated = () => {
-  return localStorage.getItem('authenticated') === 'true';
-};
-
 const routes = [
   { path: '/', component: HomePage },
   { path: '/sobre-nos', component: SobreNos },
   { path: '/login', component: UserLogin },
   { path: '/register', component: UserRegister },
-  { 
-    path: '/agenda', 
-    component: UserAgenda,
-    meta: { requiresAuth: true }
-  },
-  { 
-    path: '/prontuario', 
-    component: MedicalRecord,
-    meta: { requiresAuth: true }
-  },
-  { 
-    path: '/dashboard', 
-    component: UserDashboard,
-    meta: { requiresAuth: true }
-  },
-  { 
-    path: '/clientes', 
-    component: ClientList,
-    meta: { requiresAuth: true }
-  },
-  { 
-    path: '/pharmacists/:pharmacistId/add-patient', 
-    component: AddPatient,
-    meta: { requiresAuth: true }
-  },
-  { 
-    path: '/pharmacists/:pharmacistId/patients', 
-    component: PatientList,
-    meta: { requiresAuth: true }
-  }
+  { path: '/agenda', component: UserAgenda, meta: { requiresAuth: true } },
+  { path: '/prontuario', component: MedicalRecord, meta: { requiresAuth: true } },
+  { path: '/dashboard', component: UserDashboard, meta: { requiresAuth: true } },
+  { path: '/clientes', component: ClientList, meta: { requiresAuth: true } },
+  { path: '/pharmacists/:pharmacistId/add-patient', component: AddPatient, meta: { requiresAuth: true } },
+  { path: '/pharmacists/:pharmacistId/patients', component: PatientList, meta: { requiresAuth: true } }
 ];
 
 const router = createRouter({
@@ -58,7 +29,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated()) {
+  if (to.meta.requiresAuth && !localStorage.getItem('token')) {
     next('/login');
   } else {
     next();

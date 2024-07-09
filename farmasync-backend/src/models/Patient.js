@@ -19,7 +19,7 @@ Patient.init({
   modelName: 'Patient',
 });
 
-Patient.belongsTo(Pharmacist, { foreignKey: 'pharmacist_id' });
-Pharmacist.hasMany(Patient, { foreignKey: 'pharmacist_id' });
+Patient.belongsTo(Pharmacist, { foreignKey: { name: 'fk_pharmacist', allowNull: true } });
+Pharmacist.hasMany(Patient, { foreignKey: { name: 'fk_pharmacist', allowNull: true } });
 
 module.exports = Patient;
