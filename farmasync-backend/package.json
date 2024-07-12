@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "npm install mysql2"
+    "postinstall": "npm install mysql2",
+    "docker:build": "docker build -t carloshenrique14725/api-farm:latest .",
+    "docker:push": "docker push carloshenrique14725/api-farm:latest"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
