@@ -1,5 +1,6 @@
 [build]
-  publish = "farmasyncweb/dist"
+  base = "farmasyncweb"
+  publish = "dist"
   command = "npm run build"
 
 [[redirects]]
