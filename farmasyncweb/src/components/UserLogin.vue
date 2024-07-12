@@ -31,18 +31,19 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
       <div class="card p-4">
         <h2 class="text-center">Login</h2>
-        <form>
+        <div>
           <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" v-model="payload.email">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" class="form-control" id="password" placeholder="Password" v-model="payload.password">
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
+          <button @click="handleLogin" class="btn btn-primary btn-block">Login</button>
           <p class="text-center mt-3">Don't have an account? <router-link to="/register">Register</router-link></p>
-        </form>
+        </div>
+        <span v-if="isLoading">Carregando...</span>
       </div>
     </div>
 
@@ -52,10 +53,26 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'UserLogin',
-};
+<script setup>
+import { API_URL } from '../config';
+import axios from "axios";
+import { ref } from "vue";
+
+const payload = ref({
+  email: "",
+  password: ""
+})
+const isLoading = ref(false)
+
+const handleLogin = () => {
+  isLoading.value = true;
+  axios.post(`${API_URL}/auth/login`, payload.value)
+    .then(() => {
+      window.location.pathname = '/members'
+    })
+    .catch((err) => console.error(err))
+    .finally(() => isLoading.value = false)
+}
 </script>
 
 <style scoped>

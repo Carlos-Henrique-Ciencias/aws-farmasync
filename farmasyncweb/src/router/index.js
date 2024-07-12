@@ -9,6 +9,7 @@ import UserDashboard from '../components/UserDashboard.vue';
 import ClientList from '../components/ClientList.vue';
 import AddPatient from '../components/AddPatient.vue';
 import PatientList from '../components/PatientList.vue';
+import Members from '@/components/Members.vue';
 
 const routes = [
   { path: '/', component: HomePage },
@@ -20,7 +21,8 @@ const routes = [
   { path: '/dashboard', component: UserDashboard, meta: { requiresAuth: true } },
   { path: '/clientes', component: ClientList, meta: { requiresAuth: true } },
   { path: '/pharmacists/:pharmacistId/add-patient', component: AddPatient, meta: { requiresAuth: true } },
-  { path: '/pharmacists/:pharmacistId/patients', component: PatientList, meta: { requiresAuth: true } }
+  { path: '/pharmacists/:pharmacistId/patients', component: PatientList, meta: { requiresAuth: true } },
+  { path: '/members', component: Members }
 ];
 
 const router = createRouter({
